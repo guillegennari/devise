@@ -1,0 +1,14 @@
+<h2>Editar Usuario</h2>
+<h4><%= @user.name %> / <%= @user.email %>
+
+<%= form_for(@user, url: update_user_path) do |form| %>
+
+  <div class="field">
+    <%= form.label :admin %>
+    <%= form.check_box :admin %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

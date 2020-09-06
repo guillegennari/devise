@@ -1,0 +1,24 @@
+<h1>Admin Users</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Email</th>
+      <th scope="col">Admin</th>
+      <th scope="col">Opciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+    <tr>
+      <th scope="row"><%= user.name %></th>
+      <td><%= user.email %></td>
+      <td><%= user.is_admin? ? "si" : "no" %></td>
+      <td>
+        <%= link_to "Editar", edit_user_path(user), class: "btn btn-warning" %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
